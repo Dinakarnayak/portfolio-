@@ -12,4 +12,60 @@ html {
 
 body {
   @apply bg-gray-950 text-white antialiased;
+  background-image: radial-gradient(circle at 20% 20%, rgba(6, 182, 212, 0.08), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.1), transparent 30%);
+}
+
+.ai-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black 50%, transparent 90%);
+  opacity: 0.35;
+}
+
+.ai-glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(40px);
+  opacity: 0.6;
+  animation: floatGlow 10s ease-in-out infinite;
+}
+
+.ai-glow-one {
+  width: 280px;
+  height: 280px;
+  left: -80px;
+  top: 80px;
+  background: rgba(34, 211, 238, 0.35);
+}
+
+.ai-glow-two {
+  width: 240px;
+  height: 240px;
+  right: 10%;
+  top: 15%;
+  background: rgba(56, 189, 248, 0.3);
+  animation-delay: 1.5s;
+}
+
+.ai-glow-three {
+  width: 300px;
+  height: 300px;
+  right: -80px;
+  bottom: 30px;
+  background: rgba(59, 130, 246, 0.25);
+  animation-delay: 3s;
+}
+
+@keyframes floatGlow {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-24px) scale(1.05);
+  }
 }
